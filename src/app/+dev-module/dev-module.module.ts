@@ -18,7 +18,4 @@ import { DevModuleComponent } from './dev-module.component';
 })
 export class DevModuleModule {
   public static routes = routes;
-  constructor() {
-    console.log('`DevModuleModule` module initialized');
-  }
 }

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { getTest } from './app.reducer';
 import { TestAction } from './app.actions';
 
-export const ROOT_SELECTOR = 'app';
+export const ROOT_SELECTOR = 'ts-app';
 
 @Component({
   selector: ROOT_SELECTOR,

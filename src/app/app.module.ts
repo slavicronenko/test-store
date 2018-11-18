@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 
@@ -12,7 +10,6 @@ import { environment } from 'environments/environment';
 import { ROUTES } from './app.routes';
 // App is our top level component
 import { AppComponent } from './app.component';
-import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { DevModuleModule } from './+dev-module';
 
 import '../styles/styles.scss';
@@ -20,9 +17,7 @@ import { StoreState } from './app.store';
 import { AppEffects } from './app.effects';
 
 // Application wide providers
-const APP_PROVIDERS = [
-  ...APP_RESOLVER_PROVIDERS
-];
+const APP_PROVIDERS = [];
 
 /**
  * `AppModule` is the main entry point into Angular2's bootstraping process
@@ -37,8 +32,6 @@ const APP_PROVIDERS = [
    */
   imports: [
     BrowserModule,
-    FormsModule,
-    HttpClientModule,
     RouterModule.forRoot(ROUTES, {
       useHash: Boolean(history.pushState) === false,
       preloadingStrategy: PreloadAllModules

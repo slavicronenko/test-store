@@ -5,10 +5,10 @@
   height: 100vh;
   grid-template:
     'header header header'
-    'left-sidebar main right-sidebar'
+    'main main main'
     'footer footer footer';
 
-  grid-template-columns: minmax(250px, 1fr) minmax(400px, 3fr) minmax(250px, 1fr);
+  grid-template-columns: 250px auto 250px;
   grid-template-rows: 250px auto 30px;
 
 
@@ -83,74 +83,9 @@
     }
   }
 
-  &__left-sidebar {
-    grid-area: left-sidebar;
-    padding: 0 10px 10px 10px;
-  }
-
-  &__catalogue {
-    display: flex;
-    flex-direction: column;
-
-    h2 {
-      font-size: 1.5em;
-    }
-
-    &-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 3px;
-      border-bottom: 1px solid $border;
-      cursor: pointer;
-
-      &:last-child {
-        border-bottom: 0;
-      }
-
-      &:hover {
-        background-color: fade_out($black, 0.8);
-      }
-
-      &:after {
-        content: '⟶';
-        font-size: 0.75em;
-        font-weight: bold;
-        float: right;
-      }
-    }
-  }
-
-  &__right-sidebar {
-    grid-area: right-sidebar;
-    padding: 0 10px 10px 10px;
-  }
-
-  &__special-offers {
-    display: flex;
-    flex-direction: column;
-
-    &-item {
-      height: 150px;
-      margin-bottom: 5px;
-      border: 1px solid $border-light;
-      border-radius: 2px;
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-  }
-
   &__main {
     grid-area: main;
     padding: 10px;
-  }
-
-  &__sale {
-    height: 200px;
-    border: 1px solid $border-light;
-    border-radius: 2px;
   }
 
   &__footer {

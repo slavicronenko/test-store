@@ -16,7 +16,6 @@ import { APP_RESOLVER_PROVIDERS } from './app.resolver';
 import { DevModuleModule } from './+dev-module';
 
 import '../styles/styles.scss';
-import '../styles/headings.css';
 import { StoreState } from './app.store';
 import { AppEffects } from './app.effects';
 

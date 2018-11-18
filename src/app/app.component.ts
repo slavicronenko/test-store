@@ -10,7 +10,7 @@ export const ROOT_SELECTOR = 'app';
 
 @Component({
   selector: ROOT_SELECTOR,
-  styleUrls: ['./app.component.css'],
+  styleUrls: ['./app.component.scss'],
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {

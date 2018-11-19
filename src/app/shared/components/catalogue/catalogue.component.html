@@ -1,0 +1,4 @@
+<div class="catalogue">
+  <h2 *ngIf="isTitleVisible && title">{{ title }}</h2>
+  <div class="catalogue__item" *ngFor="let category of (categories$ | async)">{{ category.name }}</div>
+</div>

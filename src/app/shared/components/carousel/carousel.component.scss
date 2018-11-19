@@ -1,0 +1,12 @@
+@import '../../../../styles/variables';
+
+.carousel {
+  width: 600px;
+  height: 200px;
+  border: 1px solid $border-light;
+  border-radius: 2px;
+
+  h2 {
+    font-size: 1.5em;
+  }
+}

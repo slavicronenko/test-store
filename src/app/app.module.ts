@@ -15,6 +15,7 @@ import { DevModuleModule } from './+dev-module';
 import '../styles/styles.scss';
 import { StoreState } from './app.store';
 import { AppEffects } from './app.effects';
+import { SharedModule } from './shared/shared.module';
 
 // Application wide providers
 const APP_PROVIDERS = [];
@@ -38,7 +39,7 @@ const APP_PROVIDERS = [];
     }),
     StoreState,
     EffectsModule.forRoot([AppEffects]),
-
+    SharedModule,
     /**
      * This section will import the `DevModuleModule` only in certain build types.
      * When the module is not imported it will get tree shaked.

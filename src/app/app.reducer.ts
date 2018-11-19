@@ -1,21 +1,22 @@
 import { createSelector } from '@ngrx/store';
-import { TestAction } from './app.actions';
+import { StoreCategories } from './app.actions';
 import { IStoreState } from './app.store';
+import { ICategory } from './shared/services/categories/categories.service';
 
 export interface IAppState {
-  test: number;
+  categories: ICategory[];
 }
 
 const appState: IAppState = {
-  test: 228
+  categories: []
 };
 
 export function AppReducer(state: IAppState = appState, action): IAppState {
   const { type, payload } = action;
 
   switch (type) {
-    case TestAction.TYPE: {
-      return Object.assign({}, state, { test: payload });
+    case StoreCategories.TYPE: {
+      return Object.assign({}, state, { categories: payload });
     }
 
     default: {
@@ -24,7 +25,7 @@ export function AppReducer(state: IAppState = appState, action): IAppState {
   }
 }
 
-export const getTest = createSelector(
+export const getCategories = createSelector(
   ({ app }: IStoreState) => app,
-  ({ test }: IAppState): number => test
+  ({ categories }: IAppState): ICategory[] => categories
 );

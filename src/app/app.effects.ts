@@ -5,20 +5,22 @@ import {
   ofType
 } from '@ngrx/effects';
 import {
-  TestAction
+  FetchCategories, StoreCategories
 } from './app.actions';
-import { map, pluck } from 'rxjs/operators';
+import { map, switchMap } from 'rxjs/operators';
+import { CategoriesService } from './shared/services/categories/categories.service';
 
 @Injectable()
 export class AppEffects {
   constructor(
-    private actions$: Actions
+    private actions$: Actions,
+    private categoriesService: CategoriesService
   ) {}
 
-  @Effect({ dispatch: false })
+  @Effect()
   public test$ = this.actions$.pipe(
-    ofType(TestAction.TYPE),
-    pluck('payload'),
-    map((payload) => console.log(payload))
+    ofType(FetchCategories.TYPE),
+    switchMap(() => this.categoriesService.getCategories()),
+    map((categories) => new StoreCategories(categories))
   );
 }

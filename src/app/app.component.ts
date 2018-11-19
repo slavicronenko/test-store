@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { AppState } from './app.service';
 import { select, Store } from '@ngrx/store';
 import { IStoreState } from './app.store';
+import { FetchCategories } from './app.actions';
 import { Observable } from 'rxjs';
-import { getTest } from './app.reducer';
-import { TestAction } from './app.actions';
+import { ICategory } from './shared/services/categories/categories.service';
+import { getCategories } from './app.reducer';
 
 export const ROOT_SELECTOR = 'ts-app';
 
@@ -14,15 +14,15 @@ export const ROOT_SELECTOR = 'ts-app';
   templateUrl: './app.component.html'
 })
 export class AppComponent implements OnInit {
-  public test$: Observable<number>;
+  public categories$: Observable<ICategory[]>;
 
   constructor(
     public store: Store<IStoreState>
   ) {}
 
   public ngOnInit() {
-    this.test$ = this.store.pipe(select(getTest));
-    this.store.dispatch(new TestAction('test1'));
+    this.categories$ = this.store.pipe(select(getCategories));
+    this.store.dispatch(new FetchCategories());
   }
 
 }

@@ -1,19 +1,21 @@
 import { HttpClient } from '@angular/common/http';
-import { AppService } from '../../../app.service';
 import { Injectable } from '@angular/core';
+import { select, Store } from '@ngrx/store';
+import { getAppConfig } from '../../../app.reducer';
+import { switchMap } from 'rxjs/operators';
+import { IStoreState } from '../../../app.store';
 
 @Injectable()
 export class ServerInteractionService {
   constructor(
-    private appService: AppService,
+    private store: Store<IStoreState>,
     protected httpClient: HttpClient
-  ) {
-    const { serviceUrl } = this.appService.getConfig();
+  ) {}
 
-    console.log(this.appService.getConfig());
-
-    this.base = serviceUrl;
+  protected get(url: string, options?) {
+    return this.store.pipe(
+      select(getAppConfig),
+      switchMap(({ serviceUrl }) => this.httpClient.get(`${serviceUrl}/${url}`, options))
+    );
   }
-
-  protected readonly base: string;
 }

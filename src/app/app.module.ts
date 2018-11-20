@@ -3,21 +3,21 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, PreloadAllModules } from '@angular/router';
 import { EffectsModule } from '@ngrx/effects';
 
-/*
- * Platform and Environment providers/directives/pipes
- */
 import { environment } from 'environments/environment';
 import { ROUTES } from './app.routes';
-// App is our top level component
+
 import { AppComponent } from './app.component';
 import { DevModuleModule } from './+dev-module';
 
 import '../styles/styles.scss';
-import { StoreState } from './app.store';
+import { IStoreState, StoreState } from './app.store';
 import { AppEffects } from './app.effects';
 import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
+import { Store } from '@ngrx/store';
+import { tap } from 'rxjs/operators';
+import { StoreAppConfig } from './app.actions';
 
 // Application wide providers
 const APP_PROVIDERS = [];
@@ -58,11 +58,11 @@ const APP_PROVIDERS = [];
     APP_PROVIDERS,
     AppService,
     {
-      provide: APP_INITIALIZER,  // TODO: FIX THIS
-      useFactory: (appService: AppService) => () => new Promise((resolve) => {
-        appService.fetchConfig().subscribe((settings) => resolve(settings));
-      }),
-      deps: [AppService],
+      provide: APP_INITIALIZER,
+      useFactory: (store: Store<IStoreState>, appService: AppService) => () => appService.fetchAppConfig()
+        .pipe(tap((config) => store.dispatch(new StoreAppConfig(config))))
+        .toPromise(),
+      deps: [Store, AppService],
       multi: true
     }
   ]

@@ -1,15 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ServerInteractionService } from '../server-interaction/server-interaction.service';
+import { urls } from '../constants';
 
 @Injectable()
 export class CategoriesService extends ServerInteractionService {
-  private url = {
-    categories: `${this.base}/categories`
-  };
-
   public getCategories(): Observable<ICategory[] | any> {
-    return this.httpClient.get(this.url.categories);
+    return this.get(urls.categories);
   }
 }
 

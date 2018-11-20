@@ -5,16 +5,10 @@ import { Observable } from 'rxjs';
 
 @Injectable()
 export class AppService {
-  private config: IAppConfig;
-
   constructor(private httpClient: HttpClient) {}
 
-  public fetchConfig(): Observable<object> {
-    return this.httpClient.get('/settings.json').pipe( tap((config) => this.config = config));
-  }
-
-  public getConfig(): IAppConfig {
-    return Object.assign({}, this.config);
+  public fetchAppConfig(): Observable<IAppConfig> {
+    return this.httpClient.get('/settings.json');
   }
 }
 

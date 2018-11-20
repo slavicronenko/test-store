@@ -11,76 +11,8 @@
   grid-template-columns: 250px auto 250px;
   grid-template-rows: 250px auto 30px;
 
-
   &__header {
     grid-area: header;
-    display: grid;
-    background-color: $color3;
-    grid-template:
-      'logo search search shopping-cart'
-      'main-menu main-menu main-menu main-menu';
-    grid-template-columns: 200px auto auto 200px;
-    grid-template-rows: minmax(220px, auto) 30px;
-  }
-
-  &__logo {
-    grid-area: logo;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    h1 {
-      width: 110px;
-      letter-spacing: -3px;
-      font-size: 3em;
-      color: $color1;
-      cursor: pointer;
-      text-shadow: 5px 5px 1px fade_out($color1, 0.7);
-    }
-  }
-
-  &__search {
-    grid-area: search;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-
-    &-input {
-      margin: 10px;
-
-      &:focus {
-        width: 100%;
-      }
-    }
-  }
-
-  &__shopping-cart {
-    grid-area: shopping-cart;
-  }
-
-  &__main-menu {
-    grid-area: main-menu;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    border-top: 1px solid $border;
-    border-bottom: 1px solid $border;
-
-    &-item {
-      display: flex;
-      align-items: center;
-      padding: 0 20px;
-      cursor: pointer;
-      border-right: 1px solid $border;
-
-      &:last-child {
-        border-right: none;
-      }
-
-      &:hover {
-        background-color: fade_out($white, 0.7);
-      }
-    }
   }
 
   &__main {

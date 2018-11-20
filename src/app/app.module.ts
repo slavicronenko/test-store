@@ -18,6 +18,7 @@ import { AppService } from './app.service';
 import { Store } from '@ngrx/store';
 import { tap } from 'rxjs/operators';
 import { StoreAppConfig } from './app.actions';
+import { HeaderComponent } from './parts/header/header.component';
 
 // Application wide providers
 const APP_PROVIDERS = [];
@@ -28,7 +29,8 @@ const APP_PROVIDERS = [];
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent
   ],
   /**
    * Import Angular's modules.

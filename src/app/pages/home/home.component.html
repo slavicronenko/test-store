@@ -1,6 +1,6 @@
 <div class="home">
   <aside class="home__left-sidebar">
-    <ts-catalogue></ts-catalogue>
+    <ts-catalogue [categories]="categories$ | async"></ts-catalogue>
   </aside>
   <section class="home__content">
     <ts-carousel></ts-carousel>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { of } from 'rxjs';
+import { Component, Input } from '@angular/core';
+import { ICategory } from '../../services/categories/categories.service';
 
 export const ROOT_SELECTOR = 'ts-catalogue';
 
@@ -9,13 +9,7 @@ export const ROOT_SELECTOR = 'ts-catalogue';
   templateUrl: './catalogue.component.html'
 })
 export class CatalogueComponent {
-  public isTitleVisible: boolean = true;
-  public title: string = 'Catalogue';
-  public categories$ = of([
-    { id: 0, name: 'Computers' },
-    { id: 1, name: 'Appliances' },
-    { id: 2, name: 'Tools' },
-    { id: 3, name: 'Clothes & Shoes' },
-    { id: 4, name: 'Stationery & Office Supplies' },
-  ]);
+  @Input() public isTitleVisible: boolean = true;
+  @Input() public title: string = 'Catalogue';
+  @Input() public categories: ICategory[] = [];
 }

@@ -5,10 +5,7 @@
   flex-direction: column;
 
   &__item {
-    height: 150px;
     margin-bottom: 5px;
-    border: 1px solid $border-light;
-    border-radius: 2px;
 
     &:last-child {
       margin-bottom: 0;

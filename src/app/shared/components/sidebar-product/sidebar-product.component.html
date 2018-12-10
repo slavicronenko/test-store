@@ -1,0 +1,8 @@
+<div class="sidebar-product" [routerLink]="product.url">
+  <img class="sidebar-product__image" [src]="product.preview" [alt]="product.name" />
+  <div class="sidebar-product__info">
+    <h4 class="sidebar-product__title">{{ product.name }}</h4>
+    <div class="sidebar-product__price">{{ product.price | currency }}</div>
+    <div class="sidebar-product__buy">Buy</div>
+  </div>
+</div>

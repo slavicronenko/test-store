@@ -1,3 +1,4 @@
 export const urls = {
-  categories: 'categories'
+  categories: 'categories',
+  products: 'products'
 };

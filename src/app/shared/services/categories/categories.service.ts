@@ -5,7 +5,7 @@ import { urls } from '../constants';
 
 @Injectable()
 export class CategoriesService extends ServerInteractionService {
-  public getCategories(): Observable<ICategory[] | any> {
+  public fetchCategories(): Observable<ICategory[] | any> {
     return this.get(urls.categories);
   }
 }

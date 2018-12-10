@@ -1,4 +1,4 @@
 <div class="special-offers">
   <h2 *ngIf="isTitleVisible && title">{{ title }}</h2>
-  <div class="special-offers__item" *ngFor="let product of (specialOffers$ | async)">{{ product.name }}</div>
+  <div class="special-offers__item" *ngFor="let product of products">{{ product.name }}</div>
 </div>

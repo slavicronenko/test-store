@@ -6,6 +6,6 @@
     <ts-carousel></ts-carousel>
   </section>
   <aside class="home__right-sidebar">
-    <ts-special-offers></ts-special-offers>
+    <ts-special-offers [products]="specialOffers$ | async"></ts-special-offers>
   </aside>
 </div>

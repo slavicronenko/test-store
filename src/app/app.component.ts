@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { select, Store } from '@ngrx/store';
 import { IStoreState } from './app.store';
-import { FetchCategories } from './app.actions';
+import { FetchCategories, FetchSpecialOffers } from './app.actions';
 import { Observable } from 'rxjs';
 import { ICategory } from './shared/services/categories/categories.service';
 import { getCategories } from './app.reducer';
@@ -23,6 +23,7 @@ export class AppComponent implements OnInit {
   public ngOnInit() {
     this.categories$ = this.store.pipe(select(getCategories));
     this.store.dispatch(new FetchCategories());
+    this.store.dispatch(new FetchSpecialOffers());
   }
 
 }

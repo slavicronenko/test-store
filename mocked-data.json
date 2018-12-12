@@ -34,6 +34,146 @@
       "url": "stationery-office-supplies",
       "picture": "http://placehold.it/100x100",
       "parentId": null
+    },
+    {
+      "id": 5,
+      "name": "Processors",
+      "url": "processors",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 0
+    },
+    {
+      "id": 6,
+      "name": "Motherboards",
+      "url": "motherboards",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 0
+    },
+    {
+      "id": 7,
+      "name": "Graphics Cards",
+      "url": "graphics-cards",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 0
+    },
+    {
+      "id": 8,
+      "name": "TV & Video",
+      "url": "tv-video",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 1
+    },
+    {
+      "id": 9,
+      "name": "Ovens",
+      "url": "ovens",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 1
+    },
+    {
+      "id": 10,
+      "name": "Refrigerators",
+      "url": "refrigerators",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 1
+    },
+    {
+      "id": 11,
+      "name": "Dishwashers",
+      "url": "dishwashers",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 1
+    },
+    {
+      "id": 12,
+      "name": "Power Tools",
+      "url": "power-tools",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 2
+    },
+    {
+      "id": 13,
+      "name": "Hand Tools",
+      "url": "hand-tools",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 2
+    },
+    {
+      "id": 14,
+      "name": "Woodworking",
+      "url": "woodworking",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 2
+    },
+    {
+      "id": 15,
+      "name": "Drills",
+      "url": "drills",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 12
+    },
+    {
+      "id": 16,
+      "name": "Saws",
+      "url": "saws",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 12
+    },
+    {
+      "id": 17,
+      "name": "Axes",
+      "url": "axes",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 13
+    },
+    {
+      "id": 18,
+      "name": "Hammers",
+      "url": "hammers",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 13
+    },
+    {
+      "id": 19,
+      "name": "Men Clothes",
+      "url": "men-clothes",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 3
+    },
+    {
+      "id": 20,
+      "name": "Women Clothes",
+      "url": "women-clothes",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 3
+    },
+    {
+      "id": 21,
+      "name": "Men Shoes",
+      "url": "men-shoes",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 3
+    },
+    {
+      "id": 22,
+      "name": "Women Shoes",
+      "url": "women-shoes",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 3
+    },
+    {
+      "id": 23,
+      "name": "Pens & Pencils",
+      "url": "pens & pencils",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 4
+    },
+    {
+      "id": 24,
+      "name": "Rulers",
+      "url": "rulers",
+      "picture": "http://placehold.it/100x100",
+      "parentId": 4
     }
   ],
   "products": [

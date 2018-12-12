@@ -1,6 +1,8 @@
 <div class="catalogue-item">
-  <div class="catalogue-item__title" [routerLink]="item.url">{{ item.title }}</div>
+  <div class="catalogue-item__title"
+       [ngClass]="{folder: item.children.length}"
+       [routerLink]="item.url">{{ item.title }}</div>
   <div class="catalogue-item__children">
-    <ts-catalogue-item class="" *ngFor="let child of item.children" [item]="child"></ts-catalogue-item>
+    <ts-catalogue-item *ngFor="let child of item.children" [item]="child"></ts-catalogue-item>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ICategory } from '../../services/categories/categories.service';
+import { ICatalogueItem } from '../../../app.effects';
 
 export const ROOT_SELECTOR = 'ts-catalogue';
 
@@ -11,5 +11,5 @@ export const ROOT_SELECTOR = 'ts-catalogue';
 export class CatalogueComponent {
   @Input() public isTitleVisible: boolean = true;
   @Input() public title: string = 'Catalogue';
-  @Input() public categories: ICategory[] = [];
+  @Input() public catalogueItems: ICatalogueItem[] = [];
 }

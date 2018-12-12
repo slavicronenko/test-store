@@ -7,11 +7,11 @@ import {
 import {
   FetchCategories,
   FetchSpecialOffers,
-  StoreCategories,
+  StoreCatalogueItems,
   StoreSpecialOffers
 } from './app.actions';
 import { map, switchMap } from 'rxjs/operators';
-import { CategoriesService } from './shared/services/categories/categories.service';
+import { CategoriesService, ICategory } from './shared/services/categories/categories.service';
 import { ProductsService } from './shared/services/products/products.service';
 
 @Injectable()
@@ -26,7 +26,7 @@ export class AppEffects {
   public fetchCategories$ = this.actions$.pipe(
     ofType(FetchCategories.TYPE),
     switchMap(() => this.categoriesService.fetchCategories()),
-    map((categories) => new StoreCategories(categories))
+    map((categories) => new StoreCatalogueItems(AppEffects.getCatalogueItems(categories)))
   );
 
   @Effect()
@@ -35,4 +35,23 @@ export class AppEffects {
     switchMap(() => this.productsService.fetchSpecialOffers()),
     map((products) => new StoreSpecialOffers(products))
   );
+
+  private static getCatalogueItems(categories: ICategory[], parent: ICategory = null): ICatalogueItem[] {
+    return categories
+      .filter((category) => parent
+        ? category.parentId === parent.id
+        : category.parentId === null
+      )
+      .map((category) => ({
+        title: category.name,
+        url: parent ? `${parent.url}/${category.url}` : category.url,
+        children: AppEffects.getCatalogueItems(categories, category)
+      }));
+  }
+}
+
+export interface ICatalogueItem {
+  title: string;
+  url: string;
+  children: ICatalogueItem[] | null;
 }

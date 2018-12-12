@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
-import { ICategory } from './shared/services/categories/categories.service';
 import { IAppConfig } from './app.service';
 import { IProduct } from './shared/services/products/products.service';
+import { ICatalogueItem } from './app.effects';
 
 export class StoreAppConfig implements Action {
     public static readonly TYPE = '[app] store app config';
@@ -17,11 +17,11 @@ export class FetchCategories implements Action {
     constructor(public payload?: any) {}
 }
 
-export class StoreCategories implements Action {
-  public static readonly TYPE = '[app] store categories';
-  public type = StoreCategories.TYPE;
+export class StoreCatalogueItems implements Action {
+  public static readonly TYPE = '[app] store catalogueItems items';
+  public type = StoreCatalogueItems.TYPE;
 
-  constructor(public payload: ICategory[]) {}
+  constructor(public payload: ICatalogueItem[]) {}
 }
 
 export class FetchSpecialOffers implements Action {

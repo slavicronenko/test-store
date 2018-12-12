@@ -3,8 +3,9 @@ import { Observable } from 'rxjs';
 import { ICategory } from '../../shared/services/categories/categories.service';
 import { IStoreState } from '../../app.store';
 import { select, Store } from '@ngrx/store';
-import { getCategories, getSpecialOffers } from '../../app.reducer';
+import { getCatalogueItems, getSpecialOffers } from '../../app.reducer';
 import { IProduct } from '../../shared/services/products/products.service';
+import { ICatalogueItem } from '../../app.effects';
 
 export const ROOT_SELECTOR = 'ts-home';
 
@@ -18,11 +19,11 @@ export class HomeComponent implements OnInit {
     private store: Store<IStoreState>
   ) {}
 
-  public categories$: Observable<ICategory[]>;
+  public catalogueItems: Observable<ICatalogueItem[]>;
   public specialOffers$: Observable<IProduct[]>;
 
   public ngOnInit() {
-    this.categories$ = this.store.pipe(select(getCategories));
+    this.catalogueItems = this.store.pipe(select(getCatalogueItems));
     this.specialOffers$ = this.store.pipe(select(getSpecialOffers));
   }
 }

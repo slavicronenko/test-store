@@ -1,4 +1,4 @@
 <div class="catalogue">
   <h2 *ngIf="isTitleVisible && title">{{ title }}</h2>
-  <div class="catalogue__item" *ngFor="let category of categories">{{ category.name }}</div>
+  <div class="catalogue__item" *ngFor="let item of catalogueItems">{{ item.title }}</div>
 </div>

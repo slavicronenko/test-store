@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { ICatalogueItem } from '../../../app.effects';
+import { ICatalogueItem } from '../../app.effects';
 
 export const ROOT_SELECTOR = 'ts-catalogue';
 

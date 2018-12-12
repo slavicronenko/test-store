@@ -18,7 +18,7 @@ import { AppService } from './app.service';
 import { Store } from '@ngrx/store';
 import { tap } from 'rxjs/operators';
 import { StoreAppConfig } from './app.actions';
-import { HeaderComponent } from './parts/header/header.component';
+import { PartsModule } from './parts/parts.module';
 
 // Application wide providers
 const APP_PROVIDERS = [];
@@ -29,8 +29,7 @@ const APP_PROVIDERS = [];
 @NgModule({
   bootstrap: [ AppComponent ],
   declarations: [
-    AppComponent,
-    HeaderComponent
+    AppComponent
   ],
   /**
    * Import Angular's modules.
@@ -44,6 +43,7 @@ const APP_PROVIDERS = [];
     }),
     StoreState,
     EffectsModule.forRoot([AppEffects]),
+    PartsModule,
     SharedModule,
     /**
      * This section will import the `DevModuleModule` only in certain build types.

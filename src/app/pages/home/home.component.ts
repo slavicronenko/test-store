@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { ICategory } from '../../shared/services/categories/categories.service';
 import { IStoreState } from '../../app.store';
 import { select, Store } from '@ngrx/store';
 import { getCatalogueItems, getSpecialOffers } from '../../app.reducer';

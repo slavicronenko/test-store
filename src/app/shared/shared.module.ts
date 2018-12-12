@@ -1,8 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import components from './components';
-import services from './services';
+
+// Components
+import { CarouselComponent } from './components/carousel/carousel.component';
+import { SidebarProductComponent } from './components/sidebar-product/sidebar-product.component';
+import { SpecialOffersComponent } from './components/special-offers/special-offers.component';
+
+// Services
+import { CategoriesService } from './services/categories/categories.service';
+import { ProductsService } from './services/products/products.service';
 
 @NgModule({
   imports: [
@@ -10,13 +17,18 @@ import services from './services';
     RouterModule
   ],
   declarations: [
-    ...components
+    CarouselComponent,
+    SidebarProductComponent,
+    SpecialOffersComponent
   ],
   exports: [
-    ...components
+    CarouselComponent,
+    SidebarProductComponent,
+    SpecialOffersComponent
   ],
   providers: [
-    ...services
+    CategoriesService,
+    ProductsService
   ]
 })
 export class SharedModule {}

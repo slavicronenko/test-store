@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { RouterModule } from '@angular/router';
 import { routes } from './home.routes';
 import { SharedModule } from '../../shared/shared.module';
+import { PartsModule } from '../../parts/parts.module';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { SharedModule } from '../../shared/shared.module';
   imports: [
     CommonModule,
     SharedModule,
+    PartsModule,
     RouterModule.forChild(routes)
   ]
 })

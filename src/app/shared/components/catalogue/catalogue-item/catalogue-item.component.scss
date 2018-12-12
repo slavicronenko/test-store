@@ -1,0 +1,28 @@
+@import '../../../../../styles/variables';
+
+.catalogue-item {
+  position: relative;
+
+  &__title {
+    padding: 10px 0;
+    cursor: pointer;
+
+    &:hover {
+      background-color: fade_out($black, 0.8);
+
+      &+.catalogue-item__children {
+        display: block;
+      }
+    }
+  }
+
+  &__children {
+    display: none;
+    position: absolute;
+    padding: 10px;
+    top: 0;
+    left: 100%;
+    z-index: 100;
+    background-color: $white;
+  }
+}

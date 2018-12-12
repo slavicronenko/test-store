@@ -7,28 +7,4 @@
   h2 {
     font-size: 1.5em;
   }
-
-  &__item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 3px;
-    border-bottom: 1px solid $border;
-    cursor: pointer;
-
-    &:last-child {
-      border-bottom: 0;
-    }
-
-    &:hover {
-      background-color: fade_out($black, 0.8);
-    }
-
-    &:after {
-      content: '⟶';
-      font-size: 0.75em;
-      font-weight: bold;
-      float: right;
-    }
-  }
 }

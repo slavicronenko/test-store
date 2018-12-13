@@ -36,17 +36,25 @@ export class AppEffects {
     map((products) => new StoreSpecialOffers(products))
   );
 
-  private static getCatalogueItems(categories: ICategory[], parent: ICategory = null): ICatalogueItem[] {
+  private static getCatalogueItems(
+    categories: ICategory[],
+    parent: ICategory = null,
+    parentUrl: string = null
+  ): ICatalogueItem[] {
     return categories
       .filter((category) => parent
         ? category.parentId === parent.id
         : category.parentId === null
       )
-      .map((category) => ({
-        title: category.name,
-        url: parent ? `${parent.url}/${category.url}` : category.url,
-        children: AppEffects.getCatalogueItems(categories, category)
-      }));
+      .map((category) => {
+        const url = parentUrl ? `${parentUrl}/${category.url}` : category.url;
+
+        return {
+          title: category.name,
+          url,
+          children: AppEffects.getCatalogueItems(categories, category, url)
+        };
+      });
   }
 }
 

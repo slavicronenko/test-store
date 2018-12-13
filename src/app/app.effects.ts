@@ -14,6 +14,8 @@ import {
 } from './app.actions';
 import { CategoriesService, ICategory } from './shared/services/categories/categories.service';
 import { ProductsService } from './shared/services/products/products.service';
+import { Router } from '@angular/router';
+import { CategoryComponent } from './pages/category/category.component';
 
 @Injectable()
 export class AppEffects {
@@ -21,21 +23,44 @@ export class AppEffects {
     private actions$: Actions,
     private categoriesService: CategoriesService,
     private productsService: ProductsService,
+    private router: Router
   ) {}
 
   @Effect()
   public fetchCategories$ = this.actions$.pipe(
-    ofType(FetchCategories.TYPE),
+    ofType<FetchCategories>(FetchCategories.TYPE),
     switchMap(() => this.categoriesService.fetchCategories()),
-    mergeMap((categories) => [
-      new StoreCategories(categories),
-      new UpdateCatalogueItems(AppEffects.getCatalogueItems(categories))
-    ])
+    mergeMap((categories) => {
+      const { catalogueItems, categoryUrls } = AppEffects.getCatalogueItems(categories);
+
+      // TODO: move this to the separate effect
+      categoryUrls.forEach((path) => {
+        console.log({
+          path,
+          component: CategoryComponent
+        });
+        this.router.config.push({
+          path,
+          component: CategoryComponent
+        });
+      });
+
+      return [
+        new StoreCategories(categories),
+        new UpdateCatalogueItems(catalogueItems)
+      ];
+    })
+  );
+
+  @Effect({ dispatch: false })
+  public updateCatalogueItems$ = this.actions$.pipe(
+    ofType<UpdateCatalogueItems>(UpdateCatalogueItems.TYPE),
+    map(({ payload: catalogItems }) => catalogItems),
   );
 
   @Effect()
   public fetchSpecialOffers$ = this.actions$.pipe(
-    ofType(FetchSpecialOffers.TYPE),
+    ofType<FetchSpecialOffers>(FetchSpecialOffers.TYPE),
     switchMap(() => this.productsService.fetchSpecialOffers()),
     map((products) => new StoreSpecialOffers(products))
   );
@@ -44,21 +69,28 @@ export class AppEffects {
     categories: ICategory[],
     parent: ICategory = null,
     parentUrl: string = null
-  ): ICatalogueItem[] {
+  ): any {
     return categories
       .filter((category) => parent
         ? category.parentId === parent.id
         : category.parentId === null
       )
-      .map((category) => {
+      .reduce(({ catalogueItems, categoryUrls }, category) => {
         const url = parentUrl ? `${parentUrl}/${category.url}` : category.url;
+        const {
+          catalogueItems: children,
+          categoryUrls: childrenUrls
+        } = AppEffects.getCatalogueItems(categories, category, url);
 
-        return {
+        categoryUrls.push(url, ...childrenUrls);
+        catalogueItems.push({
           title: category.name,
           url,
-          children: AppEffects.getCatalogueItems(categories, category, url)
-        };
-      });
+          children
+        });
+
+        return { catalogueItems, categoryUrls };
+      }, { catalogueItems: [], categoryUrls: [] });
   }
 }
 

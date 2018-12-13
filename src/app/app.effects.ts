@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { map, mergeMap, switchMap } from 'rxjs/operators';
 import {
   Actions,
   Effect,
@@ -7,10 +8,10 @@ import {
 import {
   FetchCategories,
   FetchSpecialOffers,
-  StoreCatalogueItems,
+  UpdateCatalogueItems,
+  StoreCategories,
   StoreSpecialOffers
 } from './app.actions';
-import { map, switchMap } from 'rxjs/operators';
 import { CategoriesService, ICategory } from './shared/services/categories/categories.service';
 import { ProductsService } from './shared/services/products/products.service';
 
@@ -26,7 +27,10 @@ export class AppEffects {
   public fetchCategories$ = this.actions$.pipe(
     ofType(FetchCategories.TYPE),
     switchMap(() => this.categoriesService.fetchCategories()),
-    map((categories) => new StoreCatalogueItems(AppEffects.getCatalogueItems(categories)))
+    mergeMap((categories) => [
+      new StoreCategories(categories),
+      new UpdateCatalogueItems(AppEffects.getCatalogueItems(categories))
+    ])
   );
 
   @Effect()

@@ -10,7 +10,7 @@ import {
   FetchSpecialOffers,
   UpdateCatalogueItems,
   StoreCategories,
-  StoreSpecialOffers
+  StoreSpecialOffers, UpdateCategoryRoutes
 } from './app.actions';
 import { CategoriesService, ICategory } from './core/services/categories/categories.service';
 import { ProductsService } from './core/services/products/products.service';
@@ -33,30 +33,21 @@ export class AppEffects {
     mergeMap((categories) => {
       const { catalogueItems, categoryUrls } = AppEffects.getCatalogueItems(categories);
 
-      // TODO: move this to the separate effect
-      categoryUrls.forEach((path) => {
-        this.router.config.unshift({
-          path,
-          component: CategoryComponent
-        });
-      });
-
-      /*this.router.resetConfig([...categoryUrls.map((path) => ({
-        path,
-        component: CategoryComponent
-      })), ...this.router.config]);*/
-
       return [
         new StoreCategories(categories),
-        new UpdateCatalogueItems(catalogueItems)
+        new UpdateCatalogueItems(catalogueItems),
+        new UpdateCategoryRoutes(categoryUrls)
       ];
     })
   );
 
   @Effect({ dispatch: false })
-  public updateCatalogueItems$ = this.actions$.pipe(
-    ofType<UpdateCatalogueItems>(UpdateCatalogueItems.TYPE),
-    map(({ payload: catalogItems }) => catalogItems),
+  public updateCategoryRoutes$ = this.actions$.pipe(
+    ofType<UpdateCategoryRoutes>(UpdateCategoryRoutes.TYPE),
+    map(({ payload: categoryUrls }) => categoryUrls.forEach((path) => {
+        this.router.config.unshift({ path, component: CategoryComponent });
+      })
+    )
   );
 
   @Effect()

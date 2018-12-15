@@ -32,6 +32,13 @@ export class UpdateCatalogueItems implements Action {
   constructor(public payload: ICatalogueItem[]) {}
 }
 
+export class UpdateCategoryRoutes implements Action {
+  public static readonly TYPE = '[app] update category routes';
+  public type = UpdateCategoryRoutes.TYPE;
+
+  constructor(public payload: string[]) {}
+}
+
 export class FetchSpecialOffers implements Action {
     public static readonly TYPE = '[app] fetch special offers';
     public type = FetchSpecialOffers.TYPE;

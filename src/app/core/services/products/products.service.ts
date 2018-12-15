@@ -19,7 +19,7 @@ export interface IProduct {
   onSale: boolean;
   salePrice: number;
   preview: string;
-  picture: string;
+  img: string;
   category: number;
   giftId: number | null;
   available: boolean;

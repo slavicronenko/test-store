@@ -76,8 +76,9 @@ export class AppEffects {
 
         categoryUrls.push(url, ...childrenUrls);
         catalogueItems.push({
-          title: category.name,
+          name: category.name,
           url,
+          img: category.img,
           children
         });
 
@@ -87,7 +88,8 @@ export class AppEffects {
 }
 
 export interface ICatalogueItem {
-  title: string;
+  name: string;
   url: string;
+  img: string;
   children: ICatalogueItem[] | null;
 }

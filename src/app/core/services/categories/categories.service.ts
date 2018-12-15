@@ -14,6 +14,6 @@ export interface ICategory {
   id: number;
   name: string;
   url: string;
-  picture: string;
+  img: string;
   parentId: number;
 }

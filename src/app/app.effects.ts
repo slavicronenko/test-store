@@ -45,7 +45,7 @@ export class AppEffects {
   public updateCategoryRoutes$ = this.actions$.pipe(
     ofType<UpdateCategoryRoutes>(UpdateCategoryRoutes.TYPE),
     map(({ payload: categoryUrls }) => categoryUrls.forEach((path) => {
-        this.router.config.unshift({ path, component: CategoryComponent });
+        this.router.config.splice(1, 0, { path, component: CategoryComponent });
       })
     )
   );

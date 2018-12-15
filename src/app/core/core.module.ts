@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
-// Modules
-import { CatalogueModule } from './catalogue/catalogue.module';
-
-// Components
+import { CatalogueModule } from './catalogue';
 import { HeaderComponent } from './header/header.component';
 import { CatalogueComponent } from './catalogue/catalogue.component';
+import { CategoriesService } from './services/categories/categories.service';
+import { ProductsService } from './services/products/products.service';
 
 @NgModule({
   imports: [
@@ -21,6 +20,10 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
   exports: [
     HeaderComponent,
     CatalogueComponent
+  ],
+  providers: [
+    CategoriesService,
+    ProductsService
   ]
 })
-export class PartsModule {}
+export class CoreModule {}

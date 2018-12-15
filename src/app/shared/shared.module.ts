@@ -7,10 +7,6 @@ import { CarouselComponent } from './components/carousel/carousel.component';
 import { SidebarProductComponent } from './components/sidebar-product/sidebar-product.component';
 import { SpecialOffersComponent } from './components/special-offers/special-offers.component';
 
-// Services
-import { CategoriesService } from './services/categories/categories.service';
-import { ProductsService } from './services/products/products.service';
-
 @NgModule({
   imports: [
     CommonModule,
@@ -25,10 +21,6 @@ import { ProductsService } from './services/products/products.service';
     CarouselComponent,
     SidebarProductComponent,
     SpecialOffersComponent
-  ],
-  providers: [
-    CategoriesService,
-    ProductsService
   ]
 })
 export class SharedModule {}

@@ -12,8 +12,8 @@ import {
   StoreCategories,
   StoreSpecialOffers
 } from './app.actions';
-import { CategoriesService, ICategory } from './shared/services/categories/categories.service';
-import { ProductsService } from './shared/services/products/products.service';
+import { CategoriesService, ICategory } from './core/services/categories/categories.service';
+import { ProductsService } from './core/services/products/products.service';
 import { Router } from '@angular/router';
 import { CategoryComponent } from './pages/category/category.component';
 
@@ -35,15 +35,16 @@ export class AppEffects {
 
       // TODO: move this to the separate effect
       categoryUrls.forEach((path) => {
-        console.log({
-          path,
-          component: CategoryComponent
-        });
-        this.router.config.push({
+        this.router.config.unshift({
           path,
           component: CategoryComponent
         });
       });
+
+      /*this.router.resetConfig([...categoryUrls.map((path) => ({
+        path,
+        component: CategoryComponent
+      })), ...this.router.config]);*/
 
       return [
         new StoreCategories(categories),

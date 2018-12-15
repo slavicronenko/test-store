@@ -1,6 +1,8 @@
 import { Routes } from '@angular/router';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const ROUTES: Routes = [
-  { path: '', loadChildren: './pages/home#HomeModule'},
-  { path: '**', loadChildren: './pages/not-found#NotFoundModule' }
+  { path: '', component: HomeComponent },
+  { path: '**', component: NotFoundComponent }
 ];

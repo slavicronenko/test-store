@@ -5,13 +5,19 @@ import { FetchCategories, FetchSpecialOffers } from './app.actions';
 import { Observable } from 'rxjs';
 import { getCatalogueItems } from './app.reducer';
 import { ICatalogueItem } from './app.effects';
+import { CategoryComponent } from './pages/category/category.component';
+import { HomeComponent } from './pages/home/home.component';
 
 export const ROOT_SELECTOR = 'ts-app';
 
 @Component({
   selector: ROOT_SELECTOR,
   styleUrls: ['./app.component.scss'],
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  entryComponents: [
+    HomeComponent,
+    CategoryComponent
+  ]
 })
 export class AppComponent implements OnInit {
   public categories$: Observable<ICatalogueItem[]>;

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IProduct } from '../../services/products/products.service';
+import { IProduct } from '../../../core/services/products/products.service';
 
 export const ROOT_SELECTOR = 'ts-special-offers';
 

@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { IStoreState } from '../../app.store';
 import { select, Store } from '@ngrx/store';
 import { getCatalogueItems, getSpecialOffers } from '../../app.reducer';
-import { IProduct } from '../../shared/services/products/products.service';
+import { IProduct } from '../../core/services/products/products.service';
 import { ICatalogueItem } from '../../app.effects';
 
 export const ROOT_SELECTOR = 'ts-home';

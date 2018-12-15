@@ -1,8 +1,8 @@
 import { Action } from '@ngrx/store';
 import { IAppConfig } from './app.service';
-import { IProduct } from './shared/services/products/products.service';
+import { IProduct } from './core/services/products/products.service';
 import { ICatalogueItem } from './app.effects';
-import { ICategory } from './shared/services/categories/categories.service';
+import { ICategory } from './core/services/categories/categories.service';
 
 export class StoreAppConfig implements Action {
     public static readonly TYPE = '[app] store app config';

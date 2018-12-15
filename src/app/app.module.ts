@@ -18,7 +18,8 @@ import { AppService } from './app.service';
 import { Store } from '@ngrx/store';
 import { tap } from 'rxjs/operators';
 import { StoreAppConfig } from './app.actions';
-import { PartsModule } from './parts/parts.module';
+import { PagesModule } from './pages/pages.module';
+import { CoreModule } from './core/core.module';
 
 // Application wide providers
 const APP_PROVIDERS = [];
@@ -43,8 +44,8 @@ const APP_PROVIDERS = [];
     }),
     StoreState,
     EffectsModule.forRoot([AppEffects]),
-    PartsModule,
-    SharedModule,
+    CoreModule,
+    PagesModule,
     /**
      * This section will import the `DevModuleModule` only in certain build types.
      * When the module is not imported it will get tree shaked.

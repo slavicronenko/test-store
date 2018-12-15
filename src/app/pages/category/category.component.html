@@ -1,10 +1,9 @@
 <div class="category">
-  <aside class="category__left-sidebar">
+  <aside class="home__left-sidebar">
     <ts-catalogue [catalogueItems]="catalogueItems | async"></ts-catalogue>
   </aside>
   <section class="category__content">
-    <h1 class="category__title">{{ (category$ | async)?.name }}</h1>
-    <h1 class="category__title">{{ (category$ | async)?.name }}</h1>
+    Category
   </section>
   <aside class="category__right-sidebar">
     <ts-special-offers [products]="specialOffers$ | async"></ts-special-offers>

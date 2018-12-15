@@ -1,9 +1,9 @@
 import { createSelector } from '@ngrx/store';
 import { StoreAppConfig, UpdateCatalogueItems, StoreSpecialOffers, StoreCategories } from './app.actions';
 import { IStoreState } from './app.store';
-import { ICategory } from './shared/services/categories/categories.service';
+import { ICategory } from './core/services/categories/categories.service';
 import { IAppConfig } from './app.service';
-import { IProduct } from './shared/services/products/products.service';
+import { IProduct } from './core/services/products/products.service';
 import { ICatalogueItem } from './app.effects';
 
 export interface IAppState {

@@ -10,7 +10,8 @@ import {
   FetchSpecialOffers,
   UpdateCatalogueItems,
   StoreCategories,
-  StoreSpecialOffers, UpdateCategoryRoutes
+  StoreSpecialOffers,
+  UpdateCategoryRoutes
 } from './app.actions';
 import { CategoriesService, ICategory } from './core/services/categories/categories.service';
 import { ProductsService } from './core/services/products/products.service';

@@ -12,7 +12,6 @@ import { DevModuleModule } from './+dev-module';
 import '../styles/styles.scss';
 import { IStoreState, StoreState } from './app.store';
 import { AppEffects } from './app.effects';
-import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AppService } from './app.service';
 import { Store } from '@ngrx/store';

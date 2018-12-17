@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { CategoryComponent } from './category/category.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CoreModule } from '../core/core.module';
+import { NotFoundAuthGuard } from './not-found/not-found.authguard';
 
 @NgModule({
   imports: [
@@ -21,6 +22,9 @@ import { CoreModule } from '../core/core.module';
     HomeComponent,
     CategoryComponent,
     NotFoundComponent
+  ],
+  providers: [
+    NotFoundAuthGuard
   ]
 })
 export class PagesModule {}

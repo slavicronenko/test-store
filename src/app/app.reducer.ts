@@ -1,5 +1,11 @@
 import { createSelector } from '@ngrx/store';
-import { StoreAppConfig, UpdateCatalogueItems, StoreSpecialOffers, StoreCategories } from './app.actions';
+import {
+  StoreAppConfig,
+  UpdateCatalogueItems,
+  StoreSpecialOffers,
+  StoreCategories,
+  UpdateCategoryRoutes
+} from './app.actions';
 import { IStoreState } from './app.store';
 import { ICategory } from './core/services/categories/categories.service';
 import { IAppConfig } from './app.service';
@@ -10,6 +16,7 @@ export interface IAppState {
   config: IAppConfig;
   categories: ICategory[];
   catalogueItems: ICatalogueItem[];
+  catalogueUrls: string[];
   specialOffers: IProduct[];
 }
 
@@ -17,6 +24,7 @@ const appState: IAppState = {
   config: null,
   categories: [],
   catalogueItems: [],
+  catalogueUrls: [],
   specialOffers: []
 };
 
@@ -34,6 +42,10 @@ export function AppReducer(state: IAppState = appState, action): IAppState {
 
     case UpdateCatalogueItems.TYPE: {
       return Object.assign({}, state, { catalogueItems: payload });
+    }
+
+    case UpdateCategoryRoutes.TYPE: {
+      return Object.assign({}, state, { catalogueUrls: payload });
     }
 
     case StoreSpecialOffers.TYPE: {
@@ -54,6 +66,11 @@ export const getAppConfig = createSelector(
 export const getCatalogueItems = createSelector(
   ({ app }: IStoreState) => app,
   ({ catalogueItems }: IAppState): ICatalogueItem[] => catalogueItems
+);
+
+export const getCatalogueUrls = createSelector(
+  ({ app }: IStoreState) => app,
+  ({ catalogueUrls }: IAppState): string[] => catalogueUrls
 );
 
 export const getSpecialOffers = createSelector(

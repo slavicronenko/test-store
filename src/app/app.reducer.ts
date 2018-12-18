@@ -68,6 +68,16 @@ export const getCatalogueItems = createSelector(
   ({ catalogueItems }: IAppState): ICatalogueItem[] => catalogueItems
 );
 
+export const getCategoryByUrl = (categoryUrl: string) => createSelector(
+  ({ app }: IStoreState) => app,
+  ({ categories }: IAppState): ICategory => categories.find(({ url }) => url === categoryUrl)
+);
+
+export const getCategoryChildren = (id: number) => createSelector(
+  ({ app }: IStoreState) => app,
+  ({ categories }: IAppState): ICategory[] => categories.filter(({ parentId }) => parentId === id)
+);
+
 export const getCatalogueUrls = createSelector(
   ({ app }: IStoreState) => app,
   ({ catalogueUrls }: IAppState): string[] => catalogueUrls

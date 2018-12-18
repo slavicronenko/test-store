@@ -19,6 +19,7 @@ import { tap } from 'rxjs/operators';
 import { StoreAppConfig } from './app.actions';
 import { PagesModule } from './pages/pages.module';
 import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
 
 // Application wide providers
 const APP_PROVIDERS = [];
@@ -45,6 +46,7 @@ const APP_PROVIDERS = [];
     EffectsModule.forRoot([AppEffects]),
     CoreModule,
     PagesModule,
+    SharedModule,
     /**
      * This section will import the `DevModuleModule` only in certain build types.
      * When the module is not imported it will get tree shaked.

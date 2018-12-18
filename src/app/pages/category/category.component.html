@@ -1,11 +1,12 @@
 <div class="category">
-  <aside class="home__left-sidebar">
-    <ts-catalogue [catalogueItems]="catalogueItems | async"></ts-catalogue>
-  </aside>
-  <section class="category__content">
-    Category
-  </section>
-  <aside class="category__right-sidebar">
-    <ts-special-offers [products]="specialOffers$ | async"></ts-special-offers>
-  </aside>
+  <div class="category__info">
+    <h1>{{ (category$ | async)?.name }}</h1>
+    <p>{{ (category$ | async)?.description }}</p>
+  </div>
+  <div class="category__children">
+    <div class="category__child" *ngFor="let subcategory of subcategories$ | async">
+      <h2>{{ subcategory.name }}</h2>
+      <img [src]="subcategory.img" [alt]="subcategory.name" />
+    </div>
+  </div>
 </div>

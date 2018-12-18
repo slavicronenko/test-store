@@ -17,6 +17,8 @@ import { CategoriesService, ICategory } from './core/services/categories/categor
 import { ProductsService } from './core/services/products/products.service';
 import { Router } from '@angular/router';
 import { CategoryComponent } from './pages/category/category.component';
+import { CategoryResolver } from './pages/category/category.resolver';
+import { CategoryProductsResolver } from './pages/category/category-products.resolver';
 
 @Injectable()
 export class AppEffects {
@@ -46,7 +48,13 @@ export class AppEffects {
   public updateCategoryRoutes$ = this.actions$.pipe(
     ofType<UpdateCategoryRoutes>(UpdateCategoryRoutes.TYPE),
     map(({ payload: categoryUrls }) => categoryUrls.forEach((path) => {
-        this.router.config.splice(1, 0, { path, component: CategoryComponent });
+        this.router.config.splice(1, 0, {
+          path,
+          component: CategoryComponent,
+          resolve: {
+            products: CategoryProductsResolver
+          }
+        });
       })
     )
   );
@@ -79,7 +87,6 @@ export class AppEffects {
         catalogueItems.push({
           name: category.name,
           url,
-          img: category.img,
           children
         });
 

@@ -13,6 +13,7 @@ export class CategoriesService extends ServerInteractionService {
 export interface ICategory {
   id: number;
   name: string;
+  description: string;
   url: string;
   img: string;
   parentId: number;

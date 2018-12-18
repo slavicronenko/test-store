@@ -3,10 +3,11 @@ import { select, Store } from '@ngrx/store';
 import { IStoreState } from './app.store';
 import { FetchCategories, FetchSpecialOffers } from './app.actions';
 import { Observable } from 'rxjs';
-import { getCatalogueItems } from './app.reducer';
+import { getCatalogueItems, getSpecialOffers } from './app.reducer';
 import { ICatalogueItem } from './app.effects';
 import { CategoryComponent } from './pages/category/category.component';
 import { HomeComponent } from './pages/home/home.component';
+import { IProduct } from './core/services/products/products.service';
 
 export const ROOT_SELECTOR = 'ts-app';
 
@@ -20,16 +21,18 @@ export const ROOT_SELECTOR = 'ts-app';
   ]
 })
 export class AppComponent implements OnInit {
-  public categories$: Observable<ICatalogueItem[]>;
+  public catalogueItems$: Observable<ICatalogueItem[]>;
+  public specialOffers$: Observable<IProduct[]>;
 
   constructor(
     public store: Store<IStoreState>
   ) {}
 
   public ngOnInit() {
-    this.categories$ = this.store.pipe(select(getCatalogueItems));
     this.store.dispatch(new FetchCategories());
     this.store.dispatch(new FetchSpecialOffers());
-  }
 
+    this.catalogueItems$ = this.store.pipe(select(getCatalogueItems));
+    this.specialOffers$ = this.store.pipe(select(getSpecialOffers));
+  }
 }

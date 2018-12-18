@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IStoreState } from '../../app.store';
 import { select, Store } from '@ngrx/store';
-import { getCatalogueItems, getSpecialOffers } from '../../app.reducer';
-import { IProduct } from '../../core/services/products/products.service';
-import { ICatalogueItem } from '../../app.effects';
+import { getCategoryByUrl, getCategoryChildren } from '../../app.reducer';
+import { ActivatedRoute } from '@angular/router';
+import { ICategory } from '../../core/services/categories/categories.service';
+import { switchMap, take } from 'rxjs/operators';
 
 export const ROOT_SELECTOR = 'ts-category';
 
@@ -15,14 +16,22 @@ export const ROOT_SELECTOR = 'ts-category';
 })
 export class CategoryComponent implements OnInit {
   constructor(
-    private store: Store<IStoreState>
+    private store: Store<IStoreState>,
+    private route: ActivatedRoute
   ) {}
 
-  public catalogueItems: Observable<ICatalogueItem[]>;
-  public specialOffers$: Observable<IProduct[]>;
+  public category$: Observable<ICategory>;
+  public subcategories$: Observable<ICategory[]>;
 
   public ngOnInit() {
-    this.catalogueItems = this.store.pipe(select(getCatalogueItems));
-    this.specialOffers$ = this.store.pipe(select(getSpecialOffers));
+
+    this.category$ = this.route.url.pipe(
+      switchMap((url) => this.store.pipe(select(getCategoryByUrl(url[url.length - 1].path)))),
+      take(1)
+    );
+
+    this.subcategories$ = this.category$.pipe(
+      switchMap(({ id }) => this.store.pipe(select(getCategoryChildren(id))))
+    );
   }
 }

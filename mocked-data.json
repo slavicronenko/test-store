@@ -5,7 +5,8 @@
       "name": "Computers",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "computers",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": null
     },
     {
@@ -13,7 +14,8 @@
       "name": "Appliances",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "appliances",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": null
     },
     {
@@ -21,7 +23,8 @@
       "name": "Tools",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "tools",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": null
     },
     {
@@ -29,7 +32,8 @@
       "name": "Clothes & Shoes",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "clothes-shoes",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": null
     },
     {
@@ -37,7 +41,8 @@
       "name": "Stationery & Office Supplies",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "stationery-office-supplies",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": null
     },
     {
@@ -45,7 +50,8 @@
       "name": "Processors",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "processors",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 0
     },
     {
@@ -53,7 +59,8 @@
       "name": "Motherboards",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "motherboards",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 0
     },
     {
@@ -61,7 +68,8 @@
       "name": "Graphics Cards",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "graphics-cards",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 0
     },
     {
@@ -69,7 +77,8 @@
       "name": "TV & Video",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "tv-video",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 1
     },
     {
@@ -77,7 +86,8 @@
       "name": "Ovens",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "ovens",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 1
     },
     {
@@ -85,7 +95,8 @@
       "name": "Refrigerators",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "refrigerators",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 1
     },
     {
@@ -93,7 +104,8 @@
       "name": "Dishwashers",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "dishwashers",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 1
     },
     {
@@ -101,7 +113,8 @@
       "name": "Power Tools",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "power-tools",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 2
     },
     {
@@ -109,7 +122,8 @@
       "name": "Hand Tools",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "hand-tools",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 2
     },
     {
@@ -117,7 +131,8 @@
       "name": "Woodworking",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "woodworking",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 2
     },
     {
@@ -125,7 +140,8 @@
       "name": "Drills",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "drills",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 12
     },
     {
@@ -133,7 +149,8 @@
       "name": "Saws",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "saws",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 12
     },
     {
@@ -141,7 +158,8 @@
       "name": "Axes",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "axes",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 13
     },
     {
@@ -149,7 +167,8 @@
       "name": "Hammers",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "hammers",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 13
     },
     {
@@ -157,7 +176,8 @@
       "name": "Men Clothes",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "men-clothes",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 3
     },
     {
@@ -165,7 +185,8 @@
       "name": "Women Clothes",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "women-clothes",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 3
     },
     {
@@ -173,7 +194,8 @@
       "name": "Men Shoes",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "men-shoes",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 3
     },
     {
@@ -181,7 +203,8 @@
       "name": "Women Shoes",
       "url": "women-shoes",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 3
     },
     {
@@ -189,7 +212,8 @@
       "name": "Pens & Pencils",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "pens & pencils",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 4
     },
     {
@@ -197,7 +221,8 @@
       "name": "Rulers",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis et nisi eleifend, vulputate orci id, efficitur ipsum. Ut vitae vestibulum metus. Fusce faucibus ultricies dolor quis volutpat.",
       "url": "rulers",
-      "img": "http://placehold.it/100x100",
+      "preview": "http://placehold.it/100x100",
+      "img": "http://placehold.it/600x600",
       "parentId": 4
     }
   ],

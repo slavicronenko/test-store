@@ -1,13 +1,13 @@
 <div class="category">
   <div class="category__info">
-    <img class="category__image" [src]="(category$ | async)?.img" [alt]="(category$ | async)?.name">
+    <img class="category__preview" [src]="(category$ | async)?.preview" [alt]="(category$ | async)?.name">
     <h1 class="category__name">{{ (category$ | async)?.name }}</h1>
     <p class="category__description">{{ (category$ | async)?.description }}</p>
   </div>
   <div class="category__children">
-    <div class="category__child" *ngFor="let subcategory of subcategories$ | async">
+    <div class="category__child" *ngFor="let subcategory of (subcategories$ | async)">
       <h2>{{ subcategory.name }}</h2>
-      <img [src]="subcategory.img" [alt]="subcategory.name" />
+      <img [src]="subcategory.preview" [alt]="subcategory.name" />
     </div>
   </div>
 </div>

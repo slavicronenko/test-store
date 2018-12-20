@@ -4,7 +4,7 @@ import {
   UpdateCatalogueItems,
   StoreSpecialOffers,
   StoreCategories,
-  UpdateCategoryRoutes
+  UpdateCategoryRoutes, StoreCategoryProducts
 } from './app.actions';
 import { IStoreState } from './app.store';
 import { ICategory } from './core/services/categories/categories.service';
@@ -18,6 +18,7 @@ export interface IAppState {
   catalogueItems: ICatalogueItem[];
   catalogueUrls: string[];
   specialOffers: IProduct[];
+  currentCategoryProducts: IProduct[];
 }
 
 const appState: IAppState = {
@@ -25,7 +26,8 @@ const appState: IAppState = {
   categories: [],
   catalogueItems: [],
   catalogueUrls: [],
-  specialOffers: []
+  specialOffers: [],
+  currentCategoryProducts: null
 };
 
 export function AppReducer(state: IAppState = appState, action): IAppState {
@@ -50,6 +52,10 @@ export function AppReducer(state: IAppState = appState, action): IAppState {
 
     case StoreSpecialOffers.TYPE: {
       return Object.assign({}, state, { specialOffers: payload });
+    }
+
+    case StoreCategoryProducts.TYPE: {
+      return Object.assign({}, state, { currentCategoryProducts: payload });
     }
 
     default: {
@@ -86,4 +92,9 @@ export const getCatalogueUrls = createSelector(
 export const getSpecialOffers = createSelector(
   ({ app }: IStoreState) => app,
   ({ specialOffers }: IAppState): IProduct[] => specialOffers
+);
+
+export const getCategoryProducts = createSelector(
+  ({ app }: IStoreState) => app,
+  ({ currentCategoryProducts }: IAppState): IProduct[] => currentCategoryProducts
 );

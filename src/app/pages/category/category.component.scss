@@ -4,9 +4,15 @@
   display: flex;
   flex-direction: column;
 
+  &__info {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $border;
+  }
+
   &__preview {
     float: left;
-    margin-right: 10px;
+    margin-right: 16px;
   }
 
   &__name {
@@ -14,14 +20,41 @@
     line-height: 1em;
   }
 
-  &__children {
+  &__subcategories {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
   }
 
-  &__child {
+  &__subcategory {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 16px;
+    border: 1px solid $border;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__products {
+    display: flex;
+  }
+
+  &__product {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    border: 1px solid $border;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 16px;
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }

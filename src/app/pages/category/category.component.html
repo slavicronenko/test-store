@@ -4,10 +4,17 @@
     <h1 class="category__name">{{ (category$ | async)?.name }}</h1>
     <p class="category__description">{{ (category$ | async)?.description }}</p>
   </div>
-  <div class="category__children">
-    <div class="category__child" *ngFor="let subcategory of (subcategories$ | async)">
-      <h2>{{ subcategory.name }}</h2>
+  <div class="category__subcategories" *ngIf="(subcategories$ | async)?.length">
+    <div class="category__subcategory" *ngFor="let subcategory of (subcategories$ | async)" [routerLink]="subcategory.url">
       <img [src]="subcategory.preview" [alt]="subcategory.name" />
+      <h2>{{ subcategory.name }}</h2>
+    </div>
+  </div>
+  <div class="category__products" *ngIf="(products$ | async)?.length">
+    <div class="category__product" *ngFor="let product of (products$ | async)" [routerLink]="product.url">
+      <img [src]="product.preview" [alt]="product.name" />
+      <h2>{{ product.name }}</h2>
+      <div>{{ product.price }}</div>
     </div>
   </div>
 </div>

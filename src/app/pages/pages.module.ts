@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
 import { CategoryComponent } from './category/category.component';
@@ -11,6 +12,7 @@ import { CategoryProductsResolver } from './category/category-products.resolver'
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     CoreModule,
     SharedModule
   ],

@@ -46,6 +46,20 @@ export class FetchSpecialOffers implements Action {
     constructor(public payload?: any) {}
 }
 
+export class FetchCategoryProducts implements Action {
+    public static readonly TYPE = '[app] fetch category products';
+    public type = FetchCategoryProducts.TYPE;
+
+    constructor(public payload: number) {}
+}
+
+export class StoreCategoryProducts implements Action {
+    public static readonly TYPE = '[app] store category products';
+    public type = StoreCategoryProducts.TYPE;
+
+    constructor(public payload: IProduct[]) {}
+}
+
 export class StoreSpecialOffers implements Action {
   public static readonly TYPE = '[app] store special offers';
   public type = StoreSpecialOffers.TYPE;

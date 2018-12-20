@@ -5,7 +5,8 @@ import { select, Store } from '@ngrx/store';
 import { getCategoryByUrl, getCategoryChildren } from '../../app.reducer';
 import { ActivatedRoute } from '@angular/router';
 import { ICategory } from '../../core/services/categories/categories.service';
-import { switchMap, take } from 'rxjs/operators';
+import { pluck, switchMap, take } from 'rxjs/operators';
+import { IProduct } from '../../core/services/products/products.service';
 
 export const ROOT_SELECTOR = 'ts-category';
 
@@ -22,8 +23,10 @@ export class CategoryComponent implements OnInit {
 
   public category$: Observable<ICategory>;
   public subcategories$: Observable<ICategory[]>;
+  public products$: Observable<IProduct[]>;
 
   public ngOnInit() {
+    // TODO: add breadcrumbs
 
     this.category$ = this.route.url.pipe(
       switchMap((url) => this.store.pipe(select(getCategoryByUrl(url[url.length - 1].path)))),
@@ -33,5 +36,7 @@ export class CategoryComponent implements OnInit {
     this.subcategories$ = this.category$.pipe(
       switchMap(({ id }) => this.store.pipe(select(getCategoryChildren(id))))
     );
+
+    this.products$ = this.route.data.pipe(pluck('products'));
   }
 }

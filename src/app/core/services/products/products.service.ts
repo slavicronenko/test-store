@@ -8,6 +8,10 @@ export class ProductsService extends ServerInteractionService {
   public fetchSpecialOffers(): Observable<IProduct[] | any> {
     return this.get(urls.products, { params: { specialOffer: true }});
   }
+
+  public fetchCategoryProducts(categoryId: number): Observable<IProduct[] | any> {
+    return this.get(urls.products, { params: { category: categoryId }});
+  }
 }
 
 export interface IProduct {

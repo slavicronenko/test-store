@@ -6,11 +6,13 @@ import { CategoryProductsResolver } from './category-products.resolver';
 import { EffectsModule } from '@ngrx/effects';
 import { CategoryEffects } from './category.effects';
 import { SubcategoryComponent } from './subcategory/subcategory.component';
+import { SharedModule } from '../../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
+    SharedModule,
     EffectsModule.forFeature([CategoryEffects]),
   ],
   declarations: [

@@ -3,10 +3,11 @@ import { Observable } from 'rxjs';
 import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { IStoreState } from '../../app.store';
-import { getCategoryByUrl, getCategoryProducts } from '../../app.reducer';
+import { getCategoryByUrl } from '../../app.reducer';
 import { skipWhile, switchMap, take } from 'rxjs/operators';
-import { FetchCategoryProducts } from '../../app.actions';
 import { IProduct } from '../../core/services/products/products.service';
+import { FetchCategoryProducts } from './category.actions';
+import { getCategoryProducts } from './category.reducer';
 
 @Injectable()
 export class CategoryProductsResolver implements Resolve<IProduct[]> {

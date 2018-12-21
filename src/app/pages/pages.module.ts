@@ -1,34 +1,31 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { SharedModule } from '../shared/shared.module';
 import { HomeComponent } from './home/home.component';
-import { CategoryComponent } from './category/category.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CoreModule } from '../core/core.module';
 import { NotFoundAuthGuard } from './not-found/not-found.authguard';
-import { CategoryProductsResolver } from './category/category-products.resolver';
+import { CategoryModule } from './category/category.module';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    CategoryModule
   ],
   declarations: [
     HomeComponent,
-    CategoryComponent,
     NotFoundComponent
   ],
   exports: [
     HomeComponent,
-    CategoryComponent,
     NotFoundComponent
   ],
   providers: [
-    NotFoundAuthGuard,
-    CategoryProductsResolver
+    NotFoundAuthGuard
   ]
 })
 export class PagesModule {}

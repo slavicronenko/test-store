@@ -11,7 +11,7 @@ import {
   UpdateCatalogueItems,
   StoreCategories,
   StoreSpecialOffers,
-  UpdateCategoryRoutes, FetchCategoryProducts, StoreCategoryProducts
+  UpdateCategoryRoutes
 } from './app.actions';
 import { CategoriesService, ICategory } from './core/services/categories/categories.service';
 import { ProductsService } from './core/services/products/products.service';
@@ -64,13 +64,6 @@ export class AppEffects {
     ofType<FetchSpecialOffers>(FetchSpecialOffers.TYPE),
     switchMap(() => this.productsService.fetchSpecialOffers()),
     map((products) => new StoreSpecialOffers(products))
-  );
-
-  @Effect()
-  public fetchCategoryProducts$ = this.actions$.pipe(
-    ofType<FetchCategoryProducts>(FetchCategoryProducts.TYPE),
-    switchMap(({ payload: categoryId }) => this.productsService.fetchCategoryProducts(categoryId)),
-    map((products) => new StoreCategoryProducts(products))
   );
 
   private static getCatalogueItems(

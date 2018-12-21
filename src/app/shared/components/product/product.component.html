@@ -1,0 +1,8 @@
+<div class="product" [routerLink]="product.url">
+  <img class="product__image" [src]="product.img" [alt]="product.name"/>
+  <div class="product__info">
+    <h4 class="product__name">{{ product.name }}</h4>
+    <div class="product__price">{{ product.price | currency }}</div>
+    <div class="product__buy">Buy</div>
+  </div>
+</div>

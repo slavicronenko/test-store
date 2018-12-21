@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { SidebarProductComponent } from './components/sidebar-product/sidebar-product.component';
 import { SpecialOffersComponent } from './components/special-offers/special-offers.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   imports: [
@@ -15,11 +16,13 @@ import { SpecialOffersComponent } from './components/special-offers/special-offe
   declarations: [
     CarouselComponent,
     SidebarProductComponent,
+    ProductComponent,
     SpecialOffersComponent
   ],
   exports: [
     CarouselComponent,
     SidebarProductComponent,
+    ProductComponent,
     SpecialOffersComponent
   ]
 })

@@ -1,0 +1,41 @@
+@import '../../../../styles/variables';
+
+.product {
+  display: flex;
+  flex-direction: column;
+  max-width: 202px;
+  border: 1px solid $border;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &__image {
+    width: 200px;
+    height: 200px;
+  }
+
+  &__info {
+    padding: 8px;
+    height: 150px;
+  }
+
+  &__name {
+    text-overflow: ellipsis;
+    height: 96px;
+    overflow: hidden;
+    margin-bottom: 8px;
+  }
+
+  &__price {
+    margin-top: 8px;
+    float: left;
+  }
+
+  &__buy {
+    padding: 5px 10px;
+    background-color: $color2;
+    border: 1px solid $border;
+    border-radius: 2px;
+    float: right;
+  }
+}

@@ -9,7 +9,7 @@ import { switchMap, take } from 'rxjs/operators';
 import { IProduct } from '../../core/services/products/products.service';
 import { getCategoryProducts } from './category.reducer';
 
-export const ROOT_SELECTOR = 'ts-category';
+export const ROOT_SELECTOR = 'ts-category-page';
 
 @Component({
   selector: ROOT_SELECTOR,

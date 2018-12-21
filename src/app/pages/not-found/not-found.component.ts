@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-export const ROOT_SELECTOR = 'ts-not-found';
+export const ROOT_SELECTOR = 'ts-not-found-page';
 
 @Component({
   selector: ROOT_SELECTOR,

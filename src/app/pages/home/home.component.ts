@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-export const ROOT_SELECTOR = 'ts-home';
+export const ROOT_SELECTOR = 'ts-home-page';
 
 @Component({
   selector: ROOT_SELECTOR,

@@ -229,7 +229,7 @@
   "products": [
     {
       "id": 0,
-      "name": "Product 0",
+      "name": "Short",
       "url": "ipsum-sunt-velit",
       "description": "Reprehenderit excepteur ullamco excepteur irure nostrud velit eiusmod magna. Cupidatat commodo velit consectetur reprehenderit aliquip eiusmod nisi nostrud quis ea. Consequat cupidatat officia eu magna eiusmod ipsum aliqua deserunt dolore. Nisi enim quis exercitation irure. Ad aliqua incididunt et sint velit nostrud do proident nostrud laboris laboris pariatur culpa nostrud.",
       "price": 44.34,
@@ -244,7 +244,7 @@
     },
     {
       "id": 1,
-      "name": "Product 1",
+      "name": "Long product name",
       "url": "laboris-dolor-occaecat",
       "description": "Enim veniam id id ut nisi. Labore do nisi irure ea aliqua. Dolore commodo eiusmod et sunt ut nisi irure do pariatur reprehenderit commodo ea irure irure. Dolore Lorem duis est enim elit laborum do non laborum adipisicing commodo. Tempor mollit Lorem cillum irure cillum aliqua elit.",
       "price": 33.57,
@@ -259,7 +259,7 @@
     },
     {
       "id": 2,
-      "name": "Product 2",
+      "name": "Really long product name which won't fit on one line",
       "url": "culpa-ad-exercitation",
       "description": "Pariatur incididunt nostrud in mollit laborum minim esse. Non adipisicing aute sit in ullamco qui nulla fugiat esse et culpa duis. Ut deserunt esse Lorem fugiat. Ex Lorem veniam irure amet. Ipsum Lorem sit aliquip consectetur dolor elit veniam exercitation excepteur nostrud veniam nisi aliqua.",
       "price": 88.28,
@@ -274,7 +274,7 @@
     },
     {
       "id": 3,
-      "name": "Product 3",
+      "name": "ReallyLongProductNameWithoutWhitespaces",
       "url": "do-cillum-eu",
       "description": "Excepteur consequat eiusmod mollit irure cupidatat elit. Veniam consectetur esse incididunt eu et duis ut sint eu irure consequat. Sit velit ut proident tempor excepteur duis est duis exercitation dolor sint magna consectetur consectetur. Labore esse adipisicing nulla reprehenderit commodo aliquip ullamco nisi excepteur sit amet consequat nisi. Ut pariatur tempor quis voluptate qui dolor commodo pariatur commodo duis.",
       "price": 97.66,
@@ -289,7 +289,7 @@
     },
     {
       "id": 4,
-      "name": "Product 4",
+      "name": "Enormously long product name which won't fit on one line Enormously long product name which won't fit on one line",
       "url": "eiusmod-ut-nulla",
       "description": "Dolore enim ullamco nisi ex occaecat aliquip qui sunt. Proident amet non culpa officia enim. Nulla incididunt aliqua anim aute. Sit tempor officia ea excepteur anim ipsum dolor voluptate in veniam eu consequat est. Anim qui ea ullamco ullamco Lorem duis cupidatat esse ea exercitation labore anim eu.",
       "price": 124.27,

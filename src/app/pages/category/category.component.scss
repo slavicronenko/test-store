@@ -6,9 +6,6 @@
 
   &__content {
     display: flex;
-    padding-bottom: 16px;
-    margin-bottom: 16px;
-    border-bottom: 1px solid $border;
   }
 
   &__info {
@@ -40,6 +37,9 @@
 
   &__products {
     display: flex;
+    padding-top: 16px;
+    margin-top: 16px;
+    border-top: 1px solid $border;
   }
 
   &__product {

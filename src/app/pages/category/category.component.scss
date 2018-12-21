@@ -4,11 +4,16 @@
   display: flex;
   flex-direction: column;
 
-  &__info,
-  &__subcategories {
+  &__content {
+    display: flex;
     padding-bottom: 16px;
     margin-bottom: 16px;
     border-bottom: 1px solid $border;
+  }
+
+  &__info {
+    width: 50%;
+    min-width: 600px;
   }
 
   &__preview {
@@ -23,22 +28,14 @@
 
   &__subcategories {
     display: flex;
-    justify-content: center;
+    flex-wrap: wrap;
+    width: 50%;
+    min-width: 300px;
+    padding: 8px;
   }
 
   &__subcategory {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 16px;
-    border: 1px solid $border;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 16px;
-
-    &:last-child {
-      margin-right: 0;
-    }
+    margin: 8px;
   }
 
   &__products {

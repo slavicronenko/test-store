@@ -1,0 +1,21 @@
+@import '../../../../styles/variables';
+
+.subcategory {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 300px;
+  padding-right: 8px;
+  border: 1px solid $border;
+  border-radius: 5px;
+  overflow: hidden;
+  cursor: pointer;
+
+  &__image {
+    margin-right: 8px;
+  }
+
+  &__name {
+
+  }
+}

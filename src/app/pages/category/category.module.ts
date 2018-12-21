@@ -5,6 +5,7 @@ import { CategoryComponent } from './category.component';
 import { CategoryProductsResolver } from './category-products.resolver';
 import { EffectsModule } from '@ngrx/effects';
 import { CategoryEffects } from './category.effects';
+import { SubcategoryComponent } from './subcategory/subcategory.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { CategoryEffects } from './category.effects';
     EffectsModule.forFeature([CategoryEffects]),
   ],
   declarations: [
-    CategoryComponent
+    CategoryComponent,
+    SubcategoryComponent
   ],
   exports: [
     CategoryComponent

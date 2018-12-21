@@ -4,16 +4,16 @@ import { ActivatedRouteSnapshot, Resolve } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { IStoreState } from '../../app.store';
 import { getCategoryByUrl } from '../../app.reducer';
-import { skipWhile, switchMap, take } from 'rxjs/operators';
-import { IProduct } from '../../core/services/products/products.service';
+import { map, skipWhile, switchMap, take } from 'rxjs/operators';
 import { FetchCategoryProducts } from './category.actions';
-import { getCategoryProducts } from './category.reducer';
+import { getProductsFetchingStatus } from './category.reducer';
+import { FetchingStatusEnum } from '../../shared/interfaces';
 
 @Injectable()
-export class CategoryProductsResolver implements Resolve<IProduct[]> {
+export class CategoryProductsResolver implements Resolve<boolean> {
   constructor(private store: Store<IStoreState>) {}
 
-  public resolve(route: ActivatedRouteSnapshot): Observable<IProduct[]> {
+  public resolve(route: ActivatedRouteSnapshot): Observable<boolean> {
     const categoryUrl = route.url[route.url.length - 1].path;
 
     return this.store.pipe(
@@ -21,9 +21,10 @@ export class CategoryProductsResolver implements Resolve<IProduct[]> {
       switchMap(({ id }) => {
         this.store.dispatch(new FetchCategoryProducts(id));
 
-        return this.store.pipe(select(getCategoryProducts));
+        return this.store.pipe(select(getProductsFetchingStatus));
       }),
-      skipWhile((products) => !products), // TODO: this check shouldn't depend on this array, use fetchStatus instead
+      map((status) => status === FetchingStatusEnum.FETCHED),
+      skipWhile((isFetched) => !isFetched),
       take(1)
     );
   }

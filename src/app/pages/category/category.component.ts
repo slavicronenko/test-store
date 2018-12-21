@@ -5,8 +5,9 @@ import { select, Store } from '@ngrx/store';
 import { getCategoryByUrl, getCategoryChildren } from '../../app.reducer';
 import { ActivatedRoute } from '@angular/router';
 import { ICategory } from '../../core/services/categories/categories.service';
-import { pluck, switchMap, take } from 'rxjs/operators';
+import { switchMap, take } from 'rxjs/operators';
 import { IProduct } from '../../core/services/products/products.service';
+import { getCategoryProducts } from './category.reducer';
 
 export const ROOT_SELECTOR = 'ts-category';
 
@@ -37,6 +38,6 @@ export class CategoryComponent implements OnInit {
       switchMap(({ id }) => this.store.pipe(select(getCategoryChildren(id))))
     );
 
-    this.products$ = this.route.data.pipe(pluck('products'));
+    this.products$ = this.store.pipe(select(getCategoryProducts));
   }
 }

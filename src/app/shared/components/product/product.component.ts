@@ -4,6 +4,7 @@ import { IProduct } from '../../../core/services/products/products.service';
 
 export const ROOT_SELECTOR = 'ts-product';
 
+// TODO: merge this component with sidebar-product
 @Component({
   selector: ROOT_SELECTOR,
   styleUrls: ['./product.component.scss'],

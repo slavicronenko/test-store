@@ -31,7 +31,7 @@
     float: left;
   }
 
-  &__buy {
+  &__buy {  /* TODO: move buy button to the separate component */
     padding: 5px 10px;
     background-color: $color2;
     border: 1px solid $border;
